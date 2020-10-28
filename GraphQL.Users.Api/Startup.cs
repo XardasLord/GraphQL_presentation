@@ -60,8 +60,6 @@ namespace GraphQL.Users.Api
 
             app.UseRouting();
 
-            app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
@@ -73,9 +71,7 @@ namespace GraphQL.Users.Api
                 context.Database.Migrate();
             }
 
-            app
-                .UseGraphQL()
-                .UsePlayground();
+            app.UseGraphQL().UsePlayground();
         }
     }
 }

@@ -59,8 +59,6 @@ namespace GraphQL.Photos.Api
 
             app.UseRouting();
 
-            app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
@@ -72,9 +70,7 @@ namespace GraphQL.Photos.Api
                 context.Database.Migrate();
             }
 
-            app
-                .UseGraphQL()
-                .UsePlayground();
+            app.UseGraphQL().UsePlayground();
         }
     }
 }
