@@ -82,3 +82,4 @@ C:\localRepository\2020_11_02_GraphQ\GraphQL.Users.Api\bin\Debug\netcoreapp3.1\H
 C:\localRepository\2020_11_02_GraphQ\GraphQL.Users.Api\bin\Debug\netcoreapp3.1\HotChocolate.AspNetCore.HttpGetSchema.dll
 C:\localRepository\2020_11_02_GraphQ\GraphQL.Users.Api\bin\Debug\netcoreapp3.1\HotChocolate.AspNetCore.HttpPost.dll
 C:\localRepository\2020_11_02_GraphQ\GraphQL.Users.Api\bin\Debug\netcoreapp3.1\HotChocolate.AspNetCore.Subscriptions.dll
+C:\localRepository\2020_11_02_GraphQ\GraphQL.Users.Api\obj\Debug\netcoreapp3.1\GraphQL.Users.Api.csprojAssemblyReference.cache

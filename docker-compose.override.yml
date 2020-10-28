@@ -17,7 +17,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
-      - ConnectionStrings__UsersConnection=Server=db.photos;Database=Photos;User=sa;Password=test$$123;Integrated Security=False;MultipleActiveResultSets=True
+      - ConnectionStrings__PhotosConnection=Server=db.photos;Database=Photos;User=sa;Password=test$$123;Integrated Security=False;MultipleActiveResultSets=True
     ports:
       - 80
       - 443

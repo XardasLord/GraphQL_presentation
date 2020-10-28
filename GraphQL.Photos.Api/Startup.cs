@@ -1,4 +1,6 @@
 using GraphQL.Photos.Api.Database;
+using GraphQL.Photos.Api.GraphQL.Queries;
+using GraphQL.Photos.Api.GraphQL.Types;
 using HotChocolate;
 using HotChocolate.AspNetCore;
 using HotChocolate.Execution.Configuration;
@@ -30,20 +32,19 @@ namespace GraphQL.Photos.Api
 
             services.AddDbContext<PhotosDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("UsersConnection"));
+                options.UseSqlServer(Configuration.GetConnectionString("PhotosConnection"));
                 options.EnableSensitiveDataLogging();
             });
 
-            //services.AddGraphQL(
-            //    SchemaBuilder.New()
-            //        .AddQueryType<UserQuery>()
-            //        .AddType<UserType>()
-            //        .AddType<PostType>()
-            //        .Create(),
-            //    new QueryExecutionOptions
-            //    {
-            //        ForceSerialExecution = true
-            //    });
+            services.AddGraphQL(
+                SchemaBuilder.New()
+                    .AddQueryType<PhotoQuery>()
+                    .AddType<PhotoType>()
+                    .Create(),
+                new QueryExecutionOptions
+                {
+                    ForceSerialExecution = true
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,9 +66,9 @@ namespace GraphQL.Photos.Api
                 endpoints.MapControllers();
             });
 
-            //app
-            //    .UseGraphQL(new PathString("/api/graphql"))
-            //    .UsePlayground(new PathString("/api/graphql"));
+            app
+                .UseGraphQL(new PathString("/api/graphql"))
+                .UsePlayground(new PathString("/api/graphql"));
         }
     }
 }
