@@ -27,6 +27,20 @@ services:
     networks:
       - backend
 
+  graphql.stitching.server:
+    image: ${DOCKER_REGISTRY-}graphqlstitchingserver
+    container_name: GraphQL.Stitching.Server
+    build:
+      context: .
+      dockerfile: GraphQL.Stitching.Server/Dockerfile
+    ports:
+      - "5002:443"
+    depends_on:
+      - graphql.users.api
+      - graphql.photos.api
+    networks:
+      - backend
+
   db.users:
     image: mcr.microsoft.com/mssql/server
     container_name: GraphQL.SqlServer.Users

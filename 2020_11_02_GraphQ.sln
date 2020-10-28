@@ -9,6 +9,8 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL.Photos.Api", "GraphQL.Photos.Api\GraphQL.Photos.Api.csproj", "{A680A941-C2E0-486E-9A2A-746C5BFCBEAF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Stitching.Server", "GraphQL.Stitching.Server\GraphQL.Stitching.Server.csproj", "{35A6B06D-D265-4DD4-BE36-ACB68219E580}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A680A941-C2E0-486E-9A2A-746C5BFCBEAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A680A941-C2E0-486E-9A2A-746C5BFCBEAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A680A941-C2E0-486E-9A2A-746C5BFCBEAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35A6B06D-D265-4DD4-BE36-ACB68219E580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35A6B06D-D265-4DD4-BE36-ACB68219E580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35A6B06D-D265-4DD4-BE36-ACB68219E580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35A6B06D-D265-4DD4-BE36-ACB68219E580}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

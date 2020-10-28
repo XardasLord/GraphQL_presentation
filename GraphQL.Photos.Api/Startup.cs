@@ -6,7 +6,6 @@ using HotChocolate.AspNetCore;
 using HotChocolate.Execution.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -43,7 +42,8 @@ namespace GraphQL.Photos.Api
                     .Create(),
                 new QueryExecutionOptions
                 {
-                    ForceSerialExecution = true
+                    ForceSerialExecution = true,
+                    TracingPreference = TracingPreference.Always
                 });
         }
 
@@ -66,9 +66,15 @@ namespace GraphQL.Photos.Api
                 endpoints.MapControllers();
             });
 
+            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetService<PhotosDbContext>();
+                context.Database.Migrate();
+            }
+
             app
-                .UseGraphQL(new PathString("/api/graphql"))
-                .UsePlayground(new PathString("/api/graphql"));
+                .UseGraphQL()
+                .UsePlayground();
         }
     }
 }
