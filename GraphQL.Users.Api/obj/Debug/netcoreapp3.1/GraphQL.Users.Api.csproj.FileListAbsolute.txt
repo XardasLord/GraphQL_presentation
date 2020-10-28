@@ -57,7 +57,6 @@ C:\localRepository\2020_11_02_GraphQ\GraphQL.Users.Api\bin\Debug\netcoreapp3.1\r
 C:\localRepository\2020_11_02_GraphQ\GraphQL.Users.Api\obj\Debug\netcoreapp3.1\GraphQL.Users.Api.csproj.CopyComplete
 C:\localRepository\2020_11_02_GraphQ\GraphQL.Users.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\localRepository\2020_11_02_GraphQ\GraphQL.Users.Api\bin\Debug\netcoreapp3.1\Bogus.dll
-C:\localRepository\2020_11_02_GraphQ\GraphQL.Users.Api\obj\Debug\netcoreapp3.1\GraphQL.Users.Api.csprojAssemblyReference.cache
 C:\localRepository\2020_11_02_GraphQ\GraphQL.Users.Api\bin\Debug\netcoreapp3.1\GreenDonut.dll
 C:\localRepository\2020_11_02_GraphQ\GraphQL.Users.Api\bin\Debug\netcoreapp3.1\HotChocolate.Abstractions.dll
 C:\localRepository\2020_11_02_GraphQ\GraphQL.Users.Api\bin\Debug\netcoreapp3.1\HotChocolate.Language.dll

@@ -10,15 +10,36 @@ services:
     ports:
       - "5000:443"
     depends_on:
-      - db
+      - db.users
     networks:
       - backend
 
-  db:
+  graphql.photos.api:
+    image: ${DOCKER_REGISTRY-}graphqlphotosapi
+    container_name: GraphQL.Photos.Api
+    build:
+      context: .
+      dockerfile: GraphQL.Photos.Api/Dockerfile
+    ports:
+      - "5001:443"
+    depends_on:
+      - db.photos
+    networks:
+      - backend
+
+  db.users:
     image: mcr.microsoft.com/mssql/server
-    container_name: GraphQL.SqlServer
+    container_name: GraphQL.SqlServer.Users
     ports:
       - "1433:1433"
+    networks:
+      - backend
+
+  db.photos:
+    image: mcr.microsoft.com/mssql/server
+    container_name: GraphQL.SqlServer.Photos
+    ports:
+      - "1432:1433"
     networks:
       - backend
   
