@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  graphql.users.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings__UsersConnection=Server=db;Database=Users;User=sa;Password=test$$123;Integrated Security=False;MultipleActiveResultSets=True
+    ports:
+      - 80
+      - 443
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+  db:
+    environment:
+      - SA_PASSWORD=test$$123
+      - ACCEPT_EULA=Y

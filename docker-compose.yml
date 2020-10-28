@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  graphql.users.api:
+    image: ${DOCKER_REGISTRY-}graphqlusersapi
+    container_name: GraphQL.Users.Api
+    build:
+      context: .
+      dockerfile: GraphQL.Users.Api/Dockerfile
+    ports:
+      - "5000:443"
+    depends_on:
+      - db
+    networks:
+      - backend
+
+  db:
+    image: mcr.microsoft.com/mssql/server
+    container_name: GraphQL.SqlServer
+    ports:
+      - "1433:1433"
+    networks:
+      - backend
+  
+networks:
+  backend:
+    driver: bridge
